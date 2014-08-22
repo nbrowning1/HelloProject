@@ -9,7 +9,7 @@ public class Employee {
 	private String lastName;
 	public float bonus;
 	private static final float DEFAULT_BONUS = 200f;
-	private static final float MIN_SALARY = 7000f;
+	private static final float MIN_SALARY = 10000f;
 
 
 	public int getNumber() {
@@ -24,8 +24,13 @@ public class Employee {
 		return salary;
 	}
 
-	public void setSalary(float salary) {
-		this.salary = salary;
+	public boolean setSalary(float salary) {
+		if(salary > MIN_SALARY) {
+			this.salary = salary;
+			return true;
+		}
+		else
+			return false;
 	}
 
 	public String getFirstName() {
